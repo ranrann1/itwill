@@ -1,0 +1,330 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+#wrap {
+  /* height: 250vh; */
+}
+.logo-img {
+  width: 200px;
+  margin: 0 0 0 calc(50% - 100px);
+  padding: 10px;
+}
+.menu-img {
+  width: 80px;
+  height: 80px;
+}
+.banner {
+  height: 250px;
+  background-color: #ffe578;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.banner div:first-child {
+  width: 60%;
+}
+.banner div:first-child p:first-child {
+  padding: 6px;
+  width: 100px;
+  text-align: center;
+  margin: 80px 0 30px 15px;
+  border-radius: 30px;
+  display: inline-block;
+  background-color: #fff;
+}
+.banner div:first-child p:last-child {
+  margin: 0 0 0 15px;
+  font-size: 15px;
+}
+.banner div:last-child {
+  width: 39%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.banner div:last-child img {
+  max-width: 100%;
+}
+.slide-button {
+  height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.slide-button div:first-child {
+  width: 50%;
+}
+.slide-button div:last-child {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.slide-button div:last-child {
+  width: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.slide-button div:last-child span {
+  margin-right: 10px;
+}
+.switchInput {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+.toggleSwitchLabel {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  background-color: #c1cbd8;
+  transition: all 500ms ease-in-out;
+}
+.toggleSwitchBall {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 2px;
+  left: 2px;
+  transition: all 500ms ease-in-out;
+}
+.menu-selective {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 15px;
+}
+.menu-selective > div:first-child {
+  width: 85%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.menu-selective > div:last-child {
+  width: 15%;
+}
+.menu-selective > div:first-child > div {
+  display: flex;
+  flex-flow: row wrap;
+  width: 28%;
+  margin-left: 50px;
+}
+.menu-selective > div:first-child span {
+  display: inline-block;
+  height: 1em;
+  margin-top: 8px;
+  margin-left: 6px;
+}
+.menu-selective > div:first-child img {
+  width: 30px;
+}
+.mainContents ul a {
+  text-decoration: none;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid rgb(170, 170, 170);
+  border-radius: 50px;
+  padding: 68px 40px 27px 30px;
+  color: black;
+}
+.mainContents ul {
+  list-style: none;
+}
+.timeOfOrder {
+  display: flex;
+  flex-flow: row wrap;
+}
+.timeOfOrder > p {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.hashtag {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+}
+.hashtag > li {
+  margin-right: 5px;
+}
+.menuOfFood > li > img {
+  width: 80px;
+}
+.userInfo {
+  display: flex;
+  flex-flow: row wrap;
+}
+.userAvatar {
+  width: 60%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.userAvatar > div {
+  margin-top: 12px;
+  margin-left: 5px;
+}
+.userAvatar > img {
+  width: 50px;
+  height: 50px;
+}
+.articleTotalInfo {
+  display: flex;
+  flex-flow: row wrap;
+}
+.articleInfo-seen {
+  margin-right: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  width: 50px;
+}
+.articleInfo-seen > p {
+  margin-top: 17px;
+  margin-left: 5px;
+}
+.articleInfo-message {
+  display: flex;
+  flex-flow: row wrap;
+}
+.articleInfo-message > p {
+  margin-top: 17px;
+  margin-left: 5px;
+}
+.mainContents > ul > a {
+  margin-bottom: 8px;
+}
+.menu-selective-desktop > ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  width: 65%;
+  margin : auto;
+  margin-bottom: 100px;
+}
+.menu-selective-desktop > ul li {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid rgba(132, 132, 132, 0.487);
+  padding: 12px 20px 12px 15px;
+  margin-top: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 500ms all ease-in-out;
+}
+.menu-selective-desktop > ul li > img {
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid rgba(94, 94, 94, 0.351);
+  margin-right: 4px;
+}
+.menu-selective-desktop > ul li > span {
+  font-size: 14px;
+}
+.menu-button-desktop > ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin-left: 100px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(164, 164, 164, 0.659);
+  width: 70%;
+  margin: 0 auto;
+}
+.menu-button-desktop > ul li {
+  font-size: 24px;
+  margin-right: 40px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+/* JS element */
+
+.hidden {
+  display: none !important;
+}
+.bottom_bordered {
+  font-weight: bold;
+  border-bottom: 2px solid #ffe578;
+}
+.ball_button_clicked {
+  left: 23px !important;
+}
+.ball_button_clicked_with_background {
+  background-color: #ffe578 !important;
+}
+.clicked {
+  background-color: #ffe578;
+}
+
+/* media Query */
+
+@media screen and (min-width: 768px) {
+  .menu-img {
+    display: none;
+  }
+  header {
+    position: relative;
+  }
+  header > div {
+    display: inline-flex;
+    flex-flow: row wrap;
+    width: 15%;
+    margin-left: 15%;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 48%;
+  }
+  header > div p {
+    font-weight: bold;
+  }
+  .emoji {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .emoji > img {
+    max-width: 180px;
+  }
+  .banner div:nth-child(1) {
+    padding-left: 200px;
+  }
+  .banner div:nth-child(1) p:nth-child(2) {
+    font-size: 24px;
+  }
+  .mainContents > ul {
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .mainContents ul a {
+    width: 350px;
+    margin-bottom: 20px;
+    padding: 70px 26px 26px 34px;
+    height: 350px;
+  }
+  .hashtag li {
+    margin-left: 0px;
+  }
+  .menu-selective {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-selective-desktop {
+    display: none;
+  }
+  .header-desktop {
+    display: none;
+  }
+  .menu-button-desktop {
+    display: none;
+  }
+}

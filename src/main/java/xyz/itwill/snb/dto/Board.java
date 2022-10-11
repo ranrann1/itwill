@@ -1,0 +1,20 @@
+package xyz.itwill.snb.dto;
+
+
+import lombok.Data;
+
+@Data
+public class Board {
+	private int num;
+	private String uid;
+	private String title;
+	private String content;
+	private String category;
+	private String location;
+	private int minnum;
+	private String sdate;
+	private String edate;
+	private int status;
+	
+	private int photoNumber;
+}

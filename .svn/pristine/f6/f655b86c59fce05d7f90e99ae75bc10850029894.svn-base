@@ -1,0 +1,19 @@
+
+  package xyz.itwill.snb.dto;
+  
+  import lombok.Data;
+  
+	/*  이름 널? 유형 -------- -------- ------------- ID NOT NULL VARCHAR2(20) PASSWORD
+	  NOT NULL VARCHAR2(100) NAME NOT NULL VARCHAR2(20) LOCATION NOT NULL
+	  VARCHAR2(100) PHONE NOT NULL VARCHAR2(20) EMAIL NOT NULL VARCHAR2(50) STATUS
+	  NOT NULL NUMBER(2)*/
+  
+  @Data public class User { private String id; private String password; private
+  String name; private String zipcode; private String location; private String
+  address1; private String address2; private String phone; private String
+  mobile1; private String mobile2; private String mobile3; private String
+  email; private int status;
+  
+  
+  }
+ 

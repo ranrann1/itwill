@@ -1,0 +1,14 @@
+package xyz.itwill.snb.mapper;
+
+
+
+import xyz.itwill.snb.dto.Board;
+
+
+
+public interface WriteMapper {
+	int insertBoard(Board board);
+	int updateBoard(Board board);
+	int deleteBoard(int num);
+	Board selectBoard(int num);
+}

@@ -1,0 +1,189 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ include file = "/WEB-INF/views/login_form.jsp" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상세글</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="resources/css/subStyle.css" />
+    <script type="text/javascript">
+    function chatPopup() {
+    	
+		var pop_title = "chatPopup";
+		
+		window.open('', pop_title, 'width=500, height=720, left=400, top=100, resizable = yes');
+		
+		var infoForm = document.infoForm;
+		infoForm.target = pop_title;
+		infoForm.action = 'chat';
+		
+		infoForm.submit();
+		
+	}
+    </script>
+    <style type="text/css">
+   #btn{
+   	text-align: right;
+   }
+   #btn span{
+   		color: #717171;
+		font-size: 20px;
+   }
+   #btn span:hover{
+   		text-decoration: underline;
+   }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="margin"></div>
+        <div class="logo">
+          <img src="resources/assets/images/logo.png" alt="logo" onClick="location.href='<c:url value="/index"/>';" style = "cursor:pointer;" />
+        </div>
+        <div>
+      
+             <c:choose>
+          	<c:when test="${!empty loginUser.id }">
+          		<span onClick="location.href='<c:url value="write"/>';" style = "cursor:pointer;">새글쓰기</span>
+          		 <a href="/snb2/user/logout"><span style = "cursor:pointer;">로그아웃</span></a>
+          	</c:when>
+          	<c:otherwise>
+          		<span onclick = "showHide();" style = "cursor:pointer;">새글쓰기</span>
+          		<span onclick = "showHide();" style = "cursor:pointer;">로그인</span>
+          	</c:otherwise>
+          </c:choose>
+       
+        </div>
+      </header>
+      <div id="contentWrapper">
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          color="808080"
+          cursor="pointer"
+          height="30"
+          width="30"
+          xmlns="http://www.w3.org/2000/svg"
+          style="color: rgb(128, 128, 128)"
+        >
+          <path
+            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+          ></path>
+        </svg>
+        <article class="title">
+          <h1>${board.title }</h1>
+          <div class="profile">
+            <div>
+              <img src="resources/assets/images/bmo.png" alt="profile" />
+              <div>
+                <span>${board.uid}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <c:if test="${loginUser.id eq board.uid }">
+        <div id="btn">
+        <span onclick="location.href='modify?num=${board.num}'" style = "cursor:pointer;">수정</span>
+        <span onclick="location.href='delete?num=${board.num}'" style = "cursor:pointer;">삭제</span>
+        </div>
+        </c:if>
+        <div class="recomendedPostTotalWrapper">
+          <div class="recomendedPostWrapper">
+          
+         
+          </div>
+        </div>
+        <article class="info">
+          <ul>
+            <li>
+              <div>
+                <span>모집 구분</span>
+                <span>${board.category }</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>모집 장소</span>
+                <span>${board.location }</span>
+              </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li>
+              <div>
+                <span>모집 인원</span>
+                <span>${board.minnum }</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>시작 예정</span>
+                 <fmt:parseDate var="parsesdate" value="${board.sdate}" pattern="yyyy-MM-dd"/>
+				<fmt:formatDate var="sdate" value="${parsesdate}" pattern="yyyy-MM-dd"/>
+				${sdate }
+              </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li>
+              <div>
+                <span>종료 예정</span>
+                <fmt:parseDate var="parseedate" value="${board.edate}" pattern="yyyy-MM-dd"/>
+				<fmt:formatDate var="edate" value="${parseedate}" pattern="yyyy-MM-dd"/>
+				${edate }
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article class="intro">
+          <h2>N빵 주최자 소개</h2>
+          <div>
+            <p>
+            ${board.content }
+            </p>
+          </div>
+        </article>
+        <article class="getIn">
+          
+          <!-- Chatting -->
+          <c:choose>
+          	<c:when test="${!empty loginUser.id and board.status eq 0 }">
+          		<button type="button" id="chatting_start" onclick="chatPopup();">채팅 참여하기</button>
+          	</c:when>
+          	<c:when test="${board.status eq 1 }">
+          		<button type="button" id="chatting_start" onclick="chatPopup();" disabled="disabled">모집 완료</button>
+          	</c:when>
+          	<c:otherwise>
+          		<button type="button" id="chatting_start" onclick="alert('로그인이 필요한 서비스입니다.');">채팅 참여하기</button>
+          	</c:otherwise>
+          </c:choose>
+          <form name="infoForm" method="get">
+			<input type="hidden" name="bnum" value="${board.num}">
+		</form>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

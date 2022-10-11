@@ -1,0 +1,50 @@
+package xyz.itwill.snb.controller;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import lombok.RequiredArgsConstructor;
+import xyz.itwill.snb.dto.Board;
+import xyz.itwill.snb.service.WriteService;
+
+@Controller
+@RequiredArgsConstructor
+public class WriteController {
+	
+	private static final Logger logger=LoggerFactory.getLogger(WriteController.class); 
+	
+	private final WriteService boardService;
+	
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
+	public String write() throws Exception {
+		logger.info("write");
+		return "/write/write";
+	}
+	@RequestMapping(value = "/index", method = RequestMethod.POST)
+	public String write(@ModelAttribute Board board) throws Exception {
+		logger.info("writeadd");
+		boardService.addBoard(board);
+		
+		return "/index";
+	}
+
+	@RequestMapping("/page")
+	public String page() {
+		return "/page";
+	}
+	@RequestMapping("/detailpage")
+	public String page(@RequestParam Model model,int num) {
+		model.addAttribute("borad",boardService.getBoard(num));
+		return "/page";
+	}
+	
+	
+}

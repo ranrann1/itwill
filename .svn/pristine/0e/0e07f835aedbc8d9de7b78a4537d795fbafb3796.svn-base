@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+.member_join #addressSearch {
+    display: inline-block !important;
+   	margin-left: -2px !important;
+ }
+
+#zipcode {
+	width: 181px !important;
+}
+
+#addressSearch {
+	width: 150px !important;
+}
+
+.error {
+    color: red;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    display: none;
+}
+
+
+#exmaple_eamil.error {
+	color: black;
+}
+#mobile1, #mobile2, #mobile3 {
+	height: 44px;
+	width: 110px;
+	padding: 0 14px;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	color: #333;
+	line-height: 20px;
+	border-radius: 3px;
+	background: #fff;
+	outline: none;
+	vertical-align: top;
+}
+
+#addressNo{
+cursor : pointer;
+}
+
+#idCheck.btn.default, #emailCheck.btn.default {
+	cursor: pointer;
+	margin-left: 10px;
+	padding: 2px 10px;
+	background : yellow;
+	border: 1px solid yellow;
+	color: black;
+}
+
+.member_join #addressSearch {
+	background : yellow !important;
+	border: 1px solid yellow !important;
+	color: black !important;
+	
+}
+
+.member_join #addressNo {
+    margin-left: -27px !important;
+    color: black !important;
+    background: none !important;
+  
+}
+
+.type_form .btn.active {
+    border: 1px solid yellow !important;
+    background-color: yellow !important;
+    color: black !important;
+}
+
+.tit {
+	width : 120px;
+	margin : auto;
+}
+
+.holder {
+	position : absolute;
+	margin : auto;
+	top : 0%;
+	left : 20%;
+}
+

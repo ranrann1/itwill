@@ -1,0 +1,79 @@
+package xyz.itwill.snb.controller;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import lombok.RequiredArgsConstructor;
+import xyz.itwill.snb.dto.Board;
+import xyz.itwill.snb.service.BoardService;
+import xyz.itwill.snb.service.WriteService;
+
+@Controller
+@RequiredArgsConstructor
+public class BoardController {
+	
+	private static final Logger logger=LoggerFactory.getLogger(BoardController.class); 
+	
+	private final WriteService writeService;
+	
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
+	public String write() throws Exception {
+		logger.info("write");
+		return "/write/write";
+	}
+	
+	@RequestMapping(value = "/write", method = RequestMethod.POST)
+	public String write(@ModelAttribute Board board) throws Exception {
+		logger.info("writeadd");
+		writeService.addBoard(board);
+		
+		return "/index";
+	}
+	@RequestMapping("/map")
+	public String map() {
+		
+		return "/write/map";
+	}
+	@RequestMapping("/page")
+	public String page() {
+		
+		return "/write/page";
+	}
+	//수정페이지로
+	@GetMapping("/modify")
+	public String modify(int num,Model model) {
+		logger.info("modify");
+		model.addAttribute("board",writeService.choiceBoard(num));
+		return "write/modify";
+	}
+	//수정
+	@RequestMapping(value = "/modify",method = RequestMethod.POST)
+	public String update(@ModelAttribute Board board) {
+		logger.info("update");
+		writeService.modifyBoard(board);
+		return "/index";
+	}
+	//삭제
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
+	public String delete(@ModelAttribute Board board) {
+		logger.info("delete");
+		writeService.removeBoard(board.getNum());
+		return "/index";
+		
+	}
+	
+	
+	
+	@GetMapping("/page")
+	public String boardView(Model model,int num) {
+		model.addAttribute("board",writeService.choiceBoard(num));
+		return "/page";
+	}
+}

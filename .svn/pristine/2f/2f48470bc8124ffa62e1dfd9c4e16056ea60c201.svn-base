@@ -1,0 +1,14 @@
+package xyz.itwill.snb.dao;
+
+
+
+import xyz.itwill.snb.dto.Board;
+
+public interface WriteDAO {
+	int insertBoard(Board board);
+	int updateBoard(Board board);
+	int deleteBoard(int num);
+	Board selectBoard(int num);
+	
+	
+}

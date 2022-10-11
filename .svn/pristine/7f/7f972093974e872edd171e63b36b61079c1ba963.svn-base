@@ -1,0 +1,211 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>치킨 N빵으로 먹으실 분 구합니다</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+ 
+     <link rel=stylesheet href="<c:url value="/resources/css/subStyle.css"/>" type="text/css">
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="margin"></div>
+        <div class="logo">
+          <img src="/spring/resources/assets/images/logo.png" alt="logo" />
+        </div>
+        <div>
+          <span>내 위치</span>
+          <span>새 글 쓰기</span>
+          <span>로그인</span>
+        </div>
+      </header>
+      <div id="contentWrapper">
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          color="808080"
+          cursor="pointer"
+          height="30"
+          width="30"
+          xmlns="http://www.w3.org/2000/svg"
+          style="color: rgb(128, 128, 128)"
+        >
+          <path
+            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+          ></path>
+        </svg>
+        <article class="title">
+          <h1>치킨 N빵으로 먹으실 분 구합니다</h1>
+          <div class="profile">
+            <div>
+              <img src="/spring/resources/assets/images/bmo.png" alt="profile" />
+              <div>
+                <span>BMO</span>
+              </div>
+            </div>
+            <div>
+              <span>2022.08.01</span>
+            </div>
+          </div>
+        </article>
+        <div class="recomendedPostTotalWrapper">
+          <div class="recomendedPostWrapper">
+            <div class="recomendedPostUserInfoWrapper">
+              <div class="recomendedPostBar"></div>
+              <div class="recomendedPostUserInfo">
+                <span class="recomendedPostUserName">BMO</span>님이<br />
+                좋아하실 글을 모아봤어요!
+              </div>
+            </div>
+            <ul class="recomendedPostListWrapper">
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">1.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">2.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">3.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">4.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">5.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">6.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">7.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">8.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">9.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+              <li class="recomendedPostList">
+                <div class="recomendedPostIndex">10.</div>
+                <div class="recomendedPostTitle">
+                  피자 N빵으로 드실 분 찾습니다! 피자 N빵으로 드실 분 찾습니다!
+                  피자 N빵으로 드실 분 찾습니다!
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <article class="info">
+          <ul>
+            <li>
+              <div>
+                <span>모집 구분</span>
+                <span>치킨</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>모집 장소</span>
+                <span>잠실</span>
+              </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li>
+              <div>
+                <span>모집 인원</span>
+                <span>2명</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>시작 예정</span>
+                <span>19시 20분</span>
+              </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li>
+              <div>
+                <span>연락 방법</span>
+                <span>카카오톡 오픈채팅</span>
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article class="intro">
+          <h2>N빵 주최자 소개</h2>
+          <div>
+            <p>
+              안녕하세요! 잠실에서 치킨 N빵으로 드실 분들을 모집하게 된
+              BMO입니다!
+            </p>
+            <p>
+              혼자 먹긴 너무 많고 비싸서 N빵으로 드실 분들을 찾고 있어요! 많은
+              지원 바랍니다!
+            </p>
+          </div>
+        </article>
+        <article class="getIn">
+          <button type="button">채팅 참여하기</button>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
+

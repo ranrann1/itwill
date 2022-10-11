@@ -1,0 +1,40 @@
+package xyz.itwill.snb.dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import lombok.RequiredArgsConstructor;
+import xyz.itwill.snb.dto.User;
+
+@Repository
+@RequiredArgsConstructor
+public class UserDAOImpl implements UserDAO{
+	private final SqlSession sqlSession;
+	
+	@Override
+	public int insertUser(User user) {
+//		return sqlSession.getMapper(UserMapper.class).insertUser(user);
+		return 1;
+	}
+	
+	@Override
+	public int updateUser(User user) {
+//		return sqlSession.getMapper(UserMapper.class).updateUser(user);
+	return 1;
+	}
+	
+	@Override
+	public int deleteUser(String id) {
+//		return sqlSession.getMapper(UserMapper.class).deleteUser(id);
+		return 1;
+	}
+	
+
+	@Override
+	public User selectUser(String id) {
+		return sqlSession.selectOne("selectUser", id);
+	}
+	
+	
+	
+}

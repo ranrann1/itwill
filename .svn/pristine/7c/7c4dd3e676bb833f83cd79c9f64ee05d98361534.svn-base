@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.itwill.snb.mapper.BoardMapper">
+	<insert id="insertBoard">
+		<selectKey resultType="int" keyProperty="num" order="BEFORE">
+			select num_seq.nextval from dual 
+		</selectKey>
+		insert into board values(#{num}, #{uid}, #{title},#{content},#{category},#{location},#{minnum},#{sdate},#{edate},0)
+	</insert>
+	
+	<update id="updateBoard">
+		update board
+		<set>
+			<if test="title!=null and title!=''">
+				title=#{title},
+			</if>
+			<if test="content!=null and content!=''">
+				content=#{content},
+			</if>
+			<if test="category!=null and category!=''">
+				category=#{category},
+			</if>
+			<if test="location!=null and location!=''">
+				location=#{location},
+			</if>
+			<if test="minnum!=null and minnum!=''">
+				min_num=#{minnum},
+			</if>
+			<if test="sdate!=null and sdate!=''">
+				sdate=#{sdate},
+			</if>
+			<if test="edate!=null and edate!=''">
+				edate=#{edate}
+			</if>
+			where num=#{num}
+		</set>
+	</update>
+	
+	<delete id="deleteBoard">
+		delete from board where num=#{num}
+	</delete>
+	
+	<select id="selectBoard" resultType="Board">
+		select * from board where uid=#{uid}
+	</select>
+	
+	<select id="choiceBoard" resultType="Board">
+		select * from board where num=#{num}
+	</select>
+	
+</mapper>

@@ -1,0 +1,16 @@
+package xyz.itwill.snb.mapper;
+
+
+
+import xyz.itwill.snb.dto.Board;
+
+
+
+public interface BoardMapper {
+	int insertBoard(Board board);
+	int updateBoard(Board board);
+	int deleteBoard(int num);
+	Board selectBoard(String userid);
+	Board choiceBoard(int num);
+	int updateStatusBoard(int num);
+}

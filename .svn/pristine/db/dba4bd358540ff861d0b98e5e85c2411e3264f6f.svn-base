@@ -1,0 +1,30 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+
+<header>
+
+	<img src="<c:url value="/resources/assets/images/logo.png"/>"
+		alt="logo" class="logo-img" /> <img
+		src="<c:url value="/resources/assets/images/menu.png"/>" alt="menu"
+		class="menu-img" />
+	<div class="header-desktop">
+		<c:choose>
+			<c:when test="${login}">
+				<a href="/snb2/write">
+					<p>새 글 쓰기</p>
+				</a>
+				<a href="/snb2/user/logout">
+					<p>로그아웃</p>
+				</a>
+			</c:when>
+			<c:otherwise>
+				<a href="/snb2/user/login">
+					<p onclick="/snb2/user/login">로그인</p>
+				</a>
+			</c:otherwise>
+		</c:choose>
+	</div>
+</header>

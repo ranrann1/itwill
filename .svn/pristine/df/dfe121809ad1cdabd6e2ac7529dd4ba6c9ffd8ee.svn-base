@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.itwill.mapper.ParticipantMapper">
+	<insert id="insertParticipant">
+		insert into participant values(#{bid},  #{pid})
+	</insert>
+	
+	<select id="selectParticipantList" resultType="Participant">
+		select * from participant where pid=#{pid}
+	</select>
+</mapper>

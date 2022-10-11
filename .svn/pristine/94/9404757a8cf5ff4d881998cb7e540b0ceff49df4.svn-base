@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<!-- log4j.xml : 로그 구현체에 대한 환경설정 파일 -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="sample" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%c{1} 클래스의 %M 메소드 - %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- Application Loggers -->
+	<logger name="xyz.itwill.snb">
+		<level value="info" />
+	</logger>
+	
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework.core">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.beans">
+		<level value="info" />
+	</logger>
+	
+	<logger name="org.springframework.context">
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="info" />
+	</logger>
+	
+	<!-- CHATTING -->
+	<logger name="xyz.itwill.handler">
+		<level value="info" />
+	</logger>
+	
+	<!-- jdbc.only : 완성된 sql 명령 기록 -->
+	<logger name="jdbc.sqlonly">
+		<level value="info" />
+	</logger>
+	
+	<!-- jdbc.sqltiming : sql 명령의 실행시간(ms) 기록 -->
+	<logger name="jdbc.sqltiming">
+		<level value="info" />
+	</logger>
+	
+	<!-- jdbc.audit : resultSet 관련 정보 제외한 모든 jdbc 관련 정보 기록 -->
+	<logger name="jdbc.audit">
+		<level value="info" />
+	</logger>
+	
+	<!-- jdbc.resultSet : resultSet 관련 정보 포함한 모든 jdbc 관련 정보 기록 -->
+	<!--  
+	<logger name="jdbc.resultSet">
+		<level value="info" />
+	</logger>
+	-->
+	<!-- jdbc.resultsettable : ResultSet 관련 정보를 테이블 형식으로 기록 -->
+	<logger name="jdbc.resultsettable">
+		<level value="info" />
+	</logger>
+	
+	<!-- jdbc.connection : Connection 객체 관련 정보 기록 - Open 또는 Close -->
+	<logger name="jdbc.connection">
+		<level value="info" />
+	</logger>
+
+	<!-- Root Logger -->
+	<!-- root : 최상위 기록 정보를 제공하기 위한 엘리먼트 -->
+	<!-- => 모든 클래스에서 발생되는 기록에 대한 기본적인 정보 제공 -->
+	<!-- => 모든 logger 엘리먼트는 root 엘리먼트의 정보를 상속받아 사용 -->
+	<root>
+		<!-- priority : 모든 클래스에서 발생되는 기본 로그 이벤트를 설정하는 엘리먼트 -->
+		<priority value="warn" />
+		<!-- appender-ref : 기록을 위한 로그 구현체를 설정하는 엘리먼트 -->
+		<!-- ref 속성 : appender  -->
+		<appender-ref ref="console" />
+	</root>
+	
+</log4j:configuration>

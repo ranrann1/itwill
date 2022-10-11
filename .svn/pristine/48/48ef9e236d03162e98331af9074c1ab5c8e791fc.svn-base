@@ -1,0 +1,110 @@
+package xyz.itwill.snb.controller;
+
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import xyz.itwill.snb.dto.Board;
+import xyz.itwill.snb.dto.User;
+import xyz.itwill.snb.exception.LoginAuthFailException;
+import xyz.itwill.snb.exception.UserNotFoundException;
+import xyz.itwill.snb.service.BoardService;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class IndexController {
+
+	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+
+	@Autowired
+	private BoardService boardService;
+
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String home(Locale locale, Model model, HttpSession session) {
+		logger.info("Welcome home!!! The client locale is {}.", locale);
+
+		List<Board> boardList = new ArrayList<Board>();
+		User user = (User) session.getAttribute("loginUser");
+		if (user != null) {
+			boardList = boardService.selectByLocation(user.getLocation());
+		} else {
+			boardList = boardService.select();
+		}
+		
+		
+		/* 음식 이미지 삽입 */
+		
+		int i = 0;
+		for (Board board : boardList) {
+			switch (board.getCategory()) {
+			case "치킨":
+				boardList.get(i).setPhotoNumber(1);
+				break;
+			case "디저트":
+				boardList.get(i).setPhotoNumber(2);
+				break;
+			case "양식":
+				boardList.get(i).setPhotoNumber(3);
+				break;
+			case "백반":
+				boardList.get(i).setPhotoNumber(4);
+				break;
+			case "중식":
+				boardList.get(i).setPhotoNumber(5);
+				break;
+			case "피자":
+				boardList.get(i).setPhotoNumber(6);
+				break;
+			case "햄버거":
+				boardList.get(i).setPhotoNumber(7);
+				break;
+			case "고기":
+				boardList.get(i).setPhotoNumber(8);
+				break;
+			case "떡볶이":
+				boardList.get(i).setPhotoNumber(9);
+				break;
+				
+			default:
+				boardList.get(i).setPhotoNumber(0);
+			}
+
+			i++;
+		}
+		
+
+		model.addAttribute("boardList", boardList);
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+
+		model.addAttribute("serverTime", formattedDate);
+
+		return "index";
+	}
+	
+
+	
+
+}
